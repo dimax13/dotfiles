@@ -14,15 +14,12 @@
 	    (normal-top-level-add-subdirs-to-load-path))))))
 
 ;; 引数のディレクトリとそのサブディレクトリをload-pathに追加
-;; (Add-to-load-path "/Users/dimax13/projects/dotfiles/.emacs.d/conf" "/Users/dimax13/projects/dotfiles/.emacs.d/elisp" "/Users/dimax13/projects/dotfiles/.emacs.d/public_repos")
 (add-to-load-path "elisp" "conf" "public_repos")
-;;  (add-to-list 'load-path "~/.emacs.d/conf")
-;;  (add-to-list 'load-path "~/.emacs.d/elisp")
 
 ;; http://coderepos.org/share/browser/lang/elisp/init-loader.el
 (require 'init-loader)
-;; (require 'auto-install)
+(require 'auto-install)
 
 (init-loader-load "~/.emacs.d/conf") ; 設定ファイルがあるディレクトリを指定
-;; (setq auto-install-directory "~/.emacs.d/elisp/")
-;; (auto-install-compativility-setup)
+(setq auto-install-directory "~/.emacs.d/elisp/")
+m(auto-install-compativility-setup)

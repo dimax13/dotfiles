@@ -18,8 +18,17 @@
 ;;   (set-file-name-coding-system 'cp932)
 ;;   (setq locale-coding-system 'cp932))
 
+;; linum.elを追加
+(require 'linum)
+(global-linum-mode t)
+(setq linum-format "%5d")
+
+;; タイトルバーにファイルのフルパスを表示
+(setq frame-title-format "%f")
+;; 行番号を常に表示する
+ (global-linum-mode t)
 ;; カラム番号を表示
-(column-number-mode t)
+;;(column-number-mode t)
 
 ;; リージョン内の行数と文字数をモードラインに表示する（範囲指定時のみ）
 ;; http://d.hatena.ne.jp/sonota88/20110224/1298557375
