@@ -16,10 +16,18 @@
 ;; 引数のディレクトリとそのサブディレクトリをload-pathに追加
 (add-to-load-path "elisp" "conf" "public_repos")
 
+;; init-loader.elを追加
 ;; http://coderepos.org/share/browser/lang/elisp/init-loader.el
 (require 'init-loader)
-(require 'auto-install)
-
 (init-loader-load "~/.emacs.d/conf") ; 設定ファイルがあるディレクトリを指定
-(setq auto-install-directory "~/.emacs.d/elisp/")
-m(auto-install-compativility-setup)
+
+;; auto-installを追加
+(when (require 'auto-install nil t)
+;; インストールディレクトリを設定する 初期値は ~/.emacs.d/auto-install/
+  (setq auto-install-directory "~/.emacs.d/elisp/")
+;; EmacsWikiに登録されているelisp の名前を取得する
+  (auto-install-update-emacswiki-package-name t)
+;; 必要であればプロキシの設定を行う
+;; (setq url-proxy-services '(("http" . "localhost:8339")))
+;; install-elisp の関数を利用可能にする
+  (auto-install-compatibility-setup))
