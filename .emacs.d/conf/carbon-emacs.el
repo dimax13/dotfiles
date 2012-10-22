@@ -6,6 +6,9 @@
 (setq inhibit-startup-message t)
 (buffer-menu)
 
+;;ビープ音消去
+(setq ring-bell-function 'ignore)
+
 ;; 文字コードを指定する
 (set-language-environment "Japanese")
 (prefer-coding-system 'utf-8)
@@ -32,6 +35,14 @@
 (global-linum-mode t)
 ;; カラム番号を表示
 (column-number-mode t)
+
+;;矩形選択を有効に
+(cua-mode t)
+(setq cua-enable-cua-key nil)
+
+;;Shift+カーソルキーで選択できるようにする
+(setq pc-select-selection-keys-only t)
+'(pc-selection-mode 1)
 
 ;; ;; リージョン内の行数と文字数をモードラインに表示する（範囲指定時のみ）
 ;; ;; http://d.hatena.ne.jp/sonota88/20110224/1298557375
@@ -60,11 +71,11 @@
   )
 
 ;; デフォルトの透明度を設定する
-(add-to-list 'default-frame-alist '(alpha . 70))
+(add-to-list 'default-frame-alist '(alpha . 80))
 
 ;; カレントウィンドウの透明度を変更する (85%)
 ;; (set-frame-parameter nil 'alpha 0.85)
-(set-frame-parameter nil 'alpha 70)
+(set-frame-parameter nil 'alpha 80)
 
 ;;　現在行のハイライト
 '(defface my-hl-line-face
@@ -76,13 +87,6 @@
   "hl-line's my face")
 ;(setq hl-line-face 'my-hl-line-face)
 '(global-hl-line-mode 0)
-
-;; 文字の色
-;; (add-to-list 'default-frame-alist '(foreground-color . "white"))
-;; 背景色
-;; (add-to-list 'default-frame-alist '(background-color . "black"))
-;; リージョンの背景色を変更
-(set-face-background 'region "darkgreen")
 
 
 
