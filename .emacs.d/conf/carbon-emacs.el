@@ -88,12 +88,6 @@
 ;(setq hl-line-face 'my-hl-line-face)
 '(global-hl-line-mode 0)
 
-;; erase memubar, scrollbar
-;; (menu-bar-mode -1) ;画面上に出るメニュー(文字)を消す
-(scroll-bar-mode -1) ;画面横に出るスクロールバーを消す
-(tool-bar-mode -1) ;画面上に出るツールバー(アイコン画像)を消す
-(setq cursor-in-non-selected-windows nil) ;非active windowにはカーソルを表示しない
-(transient-mark-mode t) ;選択したとき色がつくようにする
 
 
 
