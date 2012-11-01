@@ -1,6 +1,11 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;; 表示・装飾の設定
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;
+;; 表示・装飾の設定
+;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
 ;; 起動時の画面を表示しない
 ;; (setq inhibit-splash-screen t)
 ;; スタートアップページを表示しない
@@ -34,12 +39,12 @@
 
 ;;現在行のハイライト
 '(defface my-hl-line-face
-  '((((class color) (background dark))
-     (:background "NavyBlue" t))
-    (((class color) (background light))
-     (:background "LightGoldenrodYellow" t))
-    (t (:bold t)))
-  "hl-line's my face")
+   '((((class color) (background dark))
+      (:background "NavyBlue" t))
+     (((class color) (background light))
+      (:background "LightGoldenrodYellow" t))
+     (t (:bold t)))
+   "hl-line's my face")
 ;(setq hl-line-face 'my-hl-line-face)
 '(global-hl-line-mode 0)
 
@@ -58,8 +63,13 @@
 (fset 'yes-or-no-p 'y-or-n-p)
 
 
+
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;
 ;; 機能の設定
+;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 ;;ビープ音消去

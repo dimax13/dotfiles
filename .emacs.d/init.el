@@ -31,3 +31,7 @@
 ;; (setq url-proxy-services '(("http" . "localhost:8339")))
 ;; install-elisp の関数を利用可能にする
   (auto-install-compatibility-setup))
+
+;; auto-completeを追加
+(require 'auto-complete)
+(global-auto-complete-mode t)
