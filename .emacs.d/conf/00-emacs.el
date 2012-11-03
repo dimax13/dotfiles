@@ -11,13 +11,20 @@
 (buffer-menu)
 
 ;; フォント設定
-(create-fontset-from-ascii-font "Menlo-14:weight=normal:slant=normal" nil "menlokakugo")
-(set-fontset-font "fontset-menlokakugo"
+;; (create-fontset-from-ascii-font "Menlo-14:weight=normal:slant=normal" nil "menlokakugo")
+;; (set-fontset-font "fontset-menlokakugo"
+;;                   'unicode
+;;                   (font-spec :family "Hiragino Kaku Gothic ProN" :size 12)
+;;                   nil
+;;                   'append)
+;; (add-to-list 'default-frame-alist '(font . "fontset-menlokakugo"))
+(create-fontset-from-ascii-font "Menlo-12:weight=normal:slant=normal" nil "menlomarugo")
+(set-fontset-font "fontset-menlomarugo"
                   'unicode
-                  (font-spec :family "Hiragino Kaku Gothic ProN" :size 12)
+                  (font-spec :family "Hiragino Maru Gothic ProN" :size 12)
                   nil
                   'append)
-(add-to-list 'default-frame-alist '(font . "fontset-menlokakugo"))
+(add-to-list 'default-frame-alist '(font . "fontset-menlomarugo"))
 
 ;; 行間
 (setq-default line-spacing 1)
@@ -28,6 +35,19 @@
 (tool-bar-mode -1) ;画面上に出るツールバー(アイコン画像)を消す
 (setq cursor-in-non-selected-windows nil) ;非active windowにはカーソルを表示しない
 (transient-mark-mode t) ;選択したとき色がつくようにする
+
+;; フレームの設定
+(setq default-frame-alist
+      (append
+       (list
+        ;; サイズ・位置
+	'(width . 100) ; 横幅(文字数)
+        '(height . 60) ; 高さ(行数)
+        '(top . 20) ; フレーム左上角 y 座標
+        '(left . 0) ; フレーム左上角 x 座標
+        )
+       default-frame-alist)
+      )
 
 ;; 色の設定
 (if window-system
@@ -138,17 +158,6 @@
 (setq ns-command-modifier (quote meta))
 (setq ns-alternate-modifier (quote super))
 
-;; ;; リージョン内の行数と文字数をモードラインに表示する（範囲指定時のみ）
-;; ;; http://d.hatena.ne.jp/sonota88/20110224/1298557375
-;; (defun count-lines-and-chars ()
-;;   (if mark-active
-;;       (format "%d lines,%d chars "
-;;               (count-lines (region-beginning) (region-end))
-;;               (- (region-end) (region-beginning)))
-;;       ;; これだとエコーエリアがチラつく
-;;       ;;(count-lines-region (region-beginning) (region-end))
-;;     ""))
-
-;; (add-to-list 'default-mode-line-format
-;;              '(:eval (count-lines-and-chars)))
+;; magit-status を git で起動可能にする
+(defalias 'git 'magit-status)
 

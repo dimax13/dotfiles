@@ -36,18 +36,21 @@
 
 ;; YaHtml-mode
 (setq auto-mode-alist
-(cons (cons "\\.html$" 'yahtml-mode) auto-mode-alist))
+      (cons (cons "\\.html$" 'yahtml-mode) auto-mode-alist))
 (autoload 'yahtml-mode "yahtml" "Yet Another HTML mode" t)
 (setq yahtml-www-browser "firefox")
+
 ; Ctrl-l で YaTeX の色付けが落ちるのを回避する
 (defun font-lock-recenter ()
 (interactive)
 (font-lock-fontify-buffer)
 (recenter))
+
 ;(global-set-key "\C-l" 'font-lock-recenter)
 (add-hook 'yatex-mode-hook
 '(lambda()
 (progn
+
 ;; C-lで色付けが落ちるの対策
 (define-key YaTeX-mode-map "\C-l" 
 'font-lock-recenter)
