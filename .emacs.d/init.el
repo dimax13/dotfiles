@@ -40,7 +40,7 @@
 (require 'yspel)
 
 ;; magit導入
-(add-to-list 'load-path "~/.emacs.d/elisp/magit")
+;; (add-to-list 'load-path "~/.emacs.d/elisp/magit") 
 (require 'magit)
 
 
