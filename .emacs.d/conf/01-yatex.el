@@ -2,8 +2,7 @@
 ; YaTeX 
 ;================================================================
 ;; YaTeX-mode
-;(add-to-list 'load-path "~/.emacs.d/site-lisp/yatex")
-(add-to-list 'load-path "/Applications/Emacs.app/Contents/Resources/site-lisp/yatex")
+;; (add-to-list 'load-path "/Applications/Emacs.app/Contents/Resources/site-lisp/yatex")
 (setq auto-mode-alist
       (cons (cons "\\.tex$" 'yatex-mode) auto-mode-alist))
 (setq auto-mode-alist

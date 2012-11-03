@@ -126,6 +126,10 @@
       (cons (cons "\\.*$" (expand-file-name "~/backups"))
 	    backup-directory-alist))
 
+; metaキーの変更
+(setq ns-command-modifier (quote meta))
+(setq ns-alternate-modifier (quote super))
+
 ;; ;; リージョン内の行数と文字数をモードラインに表示する（範囲指定時のみ）
 ;; ;; http://d.hatena.ne.jp/sonota88/20110224/1298557375
 ;; (defun count-lines-and-chars ()
