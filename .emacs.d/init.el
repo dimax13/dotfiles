@@ -35,3 +35,12 @@
 ;; auto-completeを追加
 (require 'auto-complete)
 (global-auto-complete-mode t)
+
+;; 日本語の校正ツール（コマンドは M-x yspel）
+(require 'yspel)
+
+;; magit導入
+(add-to-list 'load-path "~/.emacs.d/elisp/magit")
+(require 'magit)
+
+
