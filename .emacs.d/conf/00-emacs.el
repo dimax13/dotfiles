@@ -6,13 +6,21 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
-;; 起動時の画面を表示しない
-;; (setq inhibit-splash-screen t)
-;; スタートアップページを表示しない
-;; (setq inhibit-startup-message t)
 ;;スプラッシュ(起動画面)抑止
 (setq inhibit-startup-message t)
 (buffer-menu)
+
+;; フォント設定
+(create-fontset-from-ascii-font "Menlo-14:weight=normal:slant=normal" nil "menlokakugo")
+(set-fontset-font "fontset-menlokakugo"
+                  'unicode
+                  (font-spec :family "Hiragino Kaku Gothic ProN" :size 12)
+                  nil
+                  'append)
+(add-to-list 'default-frame-alist '(font . "fontset-menlokakugo"))
+
+;; 行間
+(setq-default line-spacing 1)
 
 ;; erase memubar, scrollbar
 (menu-bar-mode -1) ;画面上に出るメニュー(文字)を消す
