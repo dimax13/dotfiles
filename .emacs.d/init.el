@@ -60,8 +60,7 @@
 (require 'magit)
 
 ;; anything導入
-(require 'anything)
-(require 'anything-config)
+(require 'anything-startup)
 
 ;; yasnippet導入
 ;; (require 'yasnippet)
