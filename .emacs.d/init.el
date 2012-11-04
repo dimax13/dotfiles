@@ -59,4 +59,10 @@
 ;; (add-to-list 'load-path "~/.emacs.d/elisp/magit") 
 (require 'magit)
 
+;; anything導入
+
+;; yasnippet導入
+;; (add-to-list 'load-path "~/.emacs.d/elisp/yasnip") 
+(require 'yasnippet)
+
 
