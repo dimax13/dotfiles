@@ -60,9 +60,10 @@
 (require 'magit)
 
 ;; anything導入
+(require 'anything)
+(require 'anything-config)
 
 ;; yasnippet導入
-;; (add-to-list 'load-path "~/.emacs.d/elisp/yasnip") 
-(require 'yasnippet)
+;; (require 'yasnippet)
 
 
