@@ -8,49 +8,39 @@
 (setq auto-mode-alist
       (cons (cons "\\.sty$" 'yatex-mode) auto-mode-alist))
 (autoload 'yatex-mode "yatex" "Yet Another LaTeX mode" t)
-(setq dvi2-command "open -a TeXShop"
-      tex-command "~/Library/TeXShop/bin/platex2pdf-utf8"
-      YaTeX-kanji-code nil)
 (dolist (dir (list
               "/sbin"
               "/usr/sbin"
               "/bin"
               "/usr/bin"
-              "/opt/local/bin"
-              "/sw/bin"
               "/usr/local/bin"
-              "/usr/texbin"
-              (expand-file-name "~/bin")
-              (expand-file-name "~/.emacs.d/bin")))
+;;              "/usr/texbin"
+	      (expand-file-name "~/Library/TeXShop/bin")))
 ;; PATH と exec-path に同じ物を追加します
   (when (and (file-exists-p dir) (not (member dir exec-path)))
     (setenv "PATH" (concat dir ":" (getenv "PATH")))
-    (setq exec-path (append (list dir) exec-path))))	  
-;; (setq tex-command "~/Library/TeXShop/bin/platex2pdf-utf8" dvi2-command "open -a TexShop")
+    (setq exec-path (append (list dir) exec-path)))) 
+(setq dvi2-command "open -a TeXShop"
+;;      tex-command "platex2pdf-utf8"
+      tex-command "platex"
+      bibtex-command "pbibtex -kanji=utf8"
+      YaTeX-kanji-code nil)
 (setq YaTeX-inhibit-prefix-letter t)
-;; (setq tex-command "platex")
 ;; (defvar YaTeX-dvi2-command-ext-alist
 ;;  '(("xdvi" . ".dvi")
 ;;    ("ghostview¥¥|gv" . ".ps")
 ;;    ("acroread¥¥|pdf¥¥|Preview¥¥|TeXShop¥¥|Skim" . ".pdf")))
 
 ;; YaHtml-mode
-(setq auto-mode-alist
-      (cons (cons "\\.html$" 'yahtml-mode) auto-mode-alist))
-(autoload 'yahtml-mode "yahtml" "Yet Another HTML mode" t)
-(setq yahtml-www-browser "firefox")
-
-; Ctrl-l で YaTeX の色付けが落ちるのを回避する
-(defun font-lock-recenter ()
-(interactive)
-(font-lock-fontify-buffer)
-(recenter))
+;;(setq auto-mode-alist
+;;      (cons (cons "\\.html$" 'yahtml-mode) auto-mode-alist))
+;;(autoload 'yahtml-mode "yahtml" "Yet Another HTML mode" t)
+;;(setq yahtml-www-browser "firefox")
 
 ;(global-set-key "\C-l" 'font-lock-recenter)
 (add-hook 'yatex-mode-hook
 '(lambda()
 (progn
-
 ;; C-lで色付けが落ちるの対策
 (define-key YaTeX-mode-map "\C-l" 
 'font-lock-recenter)

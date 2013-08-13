@@ -1,4 +1,3 @@
-
 ;; Emacs 23より前のバージョンを利用する場合は
 ;; user-emacs-directory 変数が未定義のため次の設定を追加
 (when (< emacs-major-version 23)
