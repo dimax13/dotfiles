@@ -24,3 +24,9 @@
 ;; 引数のディレクトリとそのサブディレクトリをload-pathに追加
 (add-to-load-path "./elisp" "./conf" "./public_repos")
 
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; init-loader.elを追加
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; http://coderepos.org/share/browser/lang/elisp/init-loader.el
+(require 'init-loader)
+(init-loader-load "~/.emacs.d/conf") ; 設定ファイルがあるディレクトリを指定
