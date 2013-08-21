@@ -1,4 +1,8 @@
-((("itemize" .
+((("setq" .
+   [1 0 0 0])
+  ("system-uses-terminfo" .
+   [0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0])
+  ("itemize" .
    [2 0 0 0 0 0 0])
   ("item" .
    [17 0 0 0])

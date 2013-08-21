@@ -82,6 +82,7 @@
 ;; "yes or no"を"y or n"に
 (fset 'yes-or-no-p 'y-or-n-p)
 
-
+;; モードラインに時間を表示
+(display-time)
 
 
