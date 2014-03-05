@@ -33,9 +33,9 @@
       (append
        (list
         ;; サイズ・位置
-	'(width . 200) ; 横幅(文字数)
-        '(height . 60) ; 高さ(行数)
-        '(top . 20) ; フレーム左上角 y 座標
+	'(width . 85) ; 横幅(文字数)
+        '(height . 35) ; 高さ(行数)
+        '(top . 0) ; フレーム左上角 y 座標
         '(left . 0) ; フレーム左上角 x 座標
         )
        default-frame-alist)
