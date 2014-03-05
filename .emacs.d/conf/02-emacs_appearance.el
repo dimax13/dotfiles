@@ -18,13 +18,12 @@
 ;;                   nil
 ;;                   'append)
 ;; (add-to-list 'default-frame-alist '(font . "fontset-menlokakugo"))
-(create-fontset-from-ascii-font "Menlo-12:weight=normal:slant=normal" nil "menlomarugo")
-(set-fontset-font "fontset-menlomarugo"
-                  'unicode
-                  (font-spec :family "Hiragino Maru Gothic ProN" :size 12)
-                  nil
-                  'append)
-(add-to-list 'default-frame-alist '(font . "fontset-menlomarugo"))
+(set-face-attribute 'default nil
+                      :family "IPA Pゴシック"
+                      :height 200)
+ (set-fontset-font "fontset-default"
+                      'japanese-jisx0208
+                      '("IPA Pゴシック" . "jisx0208-sjis")) 
 
 ;; 行間
 (setq-default line-spacing 1)
