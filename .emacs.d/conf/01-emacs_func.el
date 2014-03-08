@@ -47,12 +47,12 @@
 (setq cua-enable-cua-key nil)
 
 ;; 一時ファイルの保存先設定
-(setq auto-save-list-file-prefix "./.temps")
+(setq auto-save-list-file-prefix "~/.emacs.d/.temp")
 
 ;; バックアップファイルの保存
 (setq make-backup-files t)
 (setq backup-directory-alist
-      (cons (cons "\\.*$" (expand-file-name "~/backups"))
+      (cons (cons "\\.*$" (expand-file-name "~/.emacs.d/backup"))
 	    backup-directory-alist))
 
 ; metaキーの変更

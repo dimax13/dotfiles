@@ -30,6 +30,13 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 (global-anzu-mode +1)
 
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; auto-complete導入
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+(require 'auto-complete)
+(require 'auto-complete-config)    ; 必須ではないですが一応
+(global-auto-complete-mode t)
+
 
 
 
