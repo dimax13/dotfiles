@@ -47,7 +47,7 @@
 (setq cua-enable-cua-key nil)
 
 ;; 一時ファイルの保存先設定
-(setq auto-save-list-file-prefix "~/.emacs.d/.temp")
+(setq auto-save-list-file-prefix "~/.emacs.d/temp")
 
 ;; バックアップファイルの保存
 (setq make-backup-files t)
