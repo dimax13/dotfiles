@@ -14,6 +14,8 @@
 ;; Find Filesで最初からホームディレクトリ以下を探しに行くようにする
 (cd "~/")
 
+(add-to-list 'exec-path "C:\home\apps\shortcut")
+
 
 ;; load-path を追加する関数を定義
 (defun add-to-load-path (&rest paths)
