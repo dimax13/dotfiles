@@ -22,7 +22,9 @@
 (global-auto-complete-mode t)
 ;; 補完候補を自動ポップアップ(auto-complete)
 (setq ac-modes (cons 'js-mode ac-modes))
-
+(add-to-list 'ac-dictionary-directories "~/.emacs.d/dict")
+(require 'auto-complete-config)
+(ac-config-default)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; 日本語の校正ツール（コマンドは M-x yspel）
