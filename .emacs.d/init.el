@@ -1,9 +1,7 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;
 ;; 初期設定
 ;;
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 ;; Find Filesで最初からホームディレクトリ以下を探しに行くようにする
@@ -33,6 +31,3 @@
 ;; CmdとOptの入れ替え
 (setq ns-command-modifier (quote meta))
 (setq ns-alternate-modifier (quote super))
-
-;; Google 日本語入力
-(setq default-input-method "MacOSX")
