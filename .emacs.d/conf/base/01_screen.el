@@ -16,10 +16,10 @@
                 (line-spacing         . 0  ) ; 文字間隔
                 (left-fringe          . 10 ) ; 左フリンジ幅
                 (right-fringe         . 11 ) ; 右フリンジ幅
-                (menu-bar-lines       . 1  ) ; メニューバー
-                (tool-bar-lines       . 1  ) ; ツールバー
-                (vertical-scroll-bars . 1  ) ; スクロールバー
-                (scroll-bar-width     . 17 ) ; スクロールバー幅
+              ;;  (menu-bar-lines       . 1  ) ; メニューバー
+              ;;  (tool-bar-lines       . 1  ) ; ツールバー
+              ;;  (vertical-scroll-bars . 1  ) ; スクロールバー
+              ;;  (scroll-bar-width     . 17 ) ; スクロールバー幅
                 (cursor-type          . box) ; カーソル種別
                 (alpha                . 100) ; 透明度
                 ) default-frame-alist) )
@@ -34,7 +34,19 @@
 (setq inhibit-startup-screen nil)
 
 ;; フルスクリーン化
-(global-set-key (kbd "<A-return>") 'toggle-frame-fullscreen)
+(global-set-key (kbd "<M-return>") 'toggle-frame-fullscreen)
+
+;; erase memubar, scrollbar
+(menu-bar-mode -1) ;画面上に出るメニュー(文字)を消す
+(scroll-bar-mode -1) ;画面横に出るスクロールバーを消す
+(tool-bar-mode -1) ;画面上に出るツールバー(アイコン画像)を消す
+(setq cursor-in-non-selected-windows nil) ;非active windowにはカーソルを表示しない
+(transient-mark-mode t) ;選択したとき色がつくようにする
+
+;; "yes or no"を"y or n"に
+(fset 'yes-or-no-p 'y-or-n-p)
+;; モードラインに時間を表示
+(display-time)
 
 
 ;;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; ;;;
